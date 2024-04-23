@@ -1,2 +1,28 @@
+@import "../styles/globals.scss";
+
+// Body
+$body-behaviour-overflow: hidden;
+$body-bg-behaviour-pointer-events: none;
+
 // Banner
 $banner-behaviour-user-select: none;
+$banner-behaviour-overflow: hidden;
+$bannertxt-behaviour-display: grid;
+$bannertxt-behaviour-justify-content: $global-center;
+$bannertxt-behaviour-align-items: $global-center;
+$bannertxt-behaviour-text-align: $global-center;
+$bannertxt-behaviour-user-select: none;
+$banner-techwrapper-behaviour-display: flex;
+$banner-techwrapper-behaviour-justify-self: $global-center;
+$banner-techwrapper-behaviour-justify-content: space-around;
+$banner-arrow-behaviour-display: flex;
+$banner-arrow-behaviour-justify-content: $global-center;
+$banner-arrow-behaviour-text-align: $global-center;
+$banner-arrow-behaviour-cursor: pointer;
+$banner-arrow-behaviour-animation: 2s infinite;
+$banner-arrow-icon-behaviour-transition: 0.5s ease;
+
+// Banner - arrow animation
+$banner-arrow-behaviour-animation-1: translateY(0);
+$banner-arrow-behaviour-animation-2: translateY(-15px);
+$banner-arrow-behaviour-animation-3: translateY(0);

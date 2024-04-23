@@ -1,0 +1,21 @@
+@import "../../styles/sizes.scss",
+"../../styles/fonts.scss",
+"../../styles/colours.scss",
+"../../styles/positions.scss",
+"../../styles/behaviours.scss",
+"../../styles/layers.scss";
+
+
+.backgroundImage {
+    position: $body-bg-position-type;
+    top: $body-bg-position-top;
+    left: $body-bg-position-left;
+    width: $body-bg-size-width;
+    height: $body-bg-size-height;
+    z-index: $body-bg-layer-z-index;
+    pointer-events: $body-bg-behaviour-pointer-events;
+    filter: $body-bg-colour-filter;
+    transform: $body-bg-size-scale;
+    background: $body-bg-colour-background;
+    background-size: $body-bg-size-background;
+}

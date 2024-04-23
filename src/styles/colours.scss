@@ -1,0 +1,22 @@
+@import "../styles/globals.scss";
+
+// Body
+$body-bg-colour-background: linear-gradient(to bottom, #000000, #223843),
+url("./assets/backgroundImage.jpg");
+
+$body-bg-colour-filter: blur(50px) brightness(1);
+
+// Banner
+$banner-colour-background: #000000;
+$banner-colour-border: 1px solid #c0c0c05d;
+$banner-colour-filter: blur(80px);
+$banner-colour-background: linear-gradient(to bottom, #478196, #06141b);
+$banner-colour-box-shadow: inset 0px 0px 62px 44px #000000bf;
+$bannertxt-colour: whitesmoke;
+$banner-techwrapper-colour-border:  2px double silver;
+$banner-techwrapper-colour-bg: linear-gradient(to top, silver, #ffffff72);
+$banner-techwrapper-colour-box-shadow:  inset 0px 0px 10px 5px #000000cc;
+$banner-arrow-icon-colour-filter: invert(100%);
+$banner-arrow-icon-colour-filter-mobile: invert(0%);
+$banner-techicon-colour-brightness: brightness(0.5);
+$banner-arrow-icon-colour-box-shadow: 0 0 10px #00000080;

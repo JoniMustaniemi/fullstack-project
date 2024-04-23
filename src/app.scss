@@ -1,14 +1,10 @@
-body {
-    overflow: hidden;
-}
+@import "./styles/sizes.scss",
+"./styles/fonts.scss",
+"./styles/colours.scss",
+"./styles/positions.scss",
+"./styles/behaviours.scss",
+"./styles/layers.scss";
 
-.backgroundImage img {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100vw;
-   height: 100vh;
-   filter: blur(50px) brightness(0.4);
-   transform: scale(2);
-   z-index: -5;
+body {
+    overflow: $body-behaviour-overflow;
 }

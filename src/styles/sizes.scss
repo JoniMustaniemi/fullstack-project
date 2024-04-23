@@ -1,4 +1,24 @@
+@import "../styles/globals.scss";
+
+// Body
+$body-bg-size-width: 100vw;
+$body-bg-size-height: 100vw;
+$body-bg-size-background: cover;
+$body-bg-size-scale: scale(2);
+
 // Banner
-$banner-size-width: 100vw;
+$banner-size-border-radius: 10px;
+$banner-size-width: 95vw;
 $banner-size-height: 40vh;
-$banner-size-type: cover;
+$banner-size-min-height: 500px;
+$banner-size-max-height: 1000px;
+$banner-size-transform: scale(1.3);
+$banner-techwrapper-size-border-radius: 50px;
+$banner-techwrapper-size-padding: 15px;
+$banner-techwrapper-size-width: calc(100vw / 3);
+$banner-techwrapper-size-min-width: 300px;
+$banner-techwrapper-icon-size-width: 60px;
+$banner-arrow-size-width: 100%;
+$banner-arrow-icon-size-width: 80px;
+$banner-arrow-icon-size-padding: 10px;
+$banner-arrow-icon-size-border-radius: 50px;

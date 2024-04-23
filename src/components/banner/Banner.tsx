@@ -1,23 +1,28 @@
-import { ReactElement, useEffect } from "react";
-import bannerImage from "../../assets/backgroundImage.jpg";
+import { ReactElement } from "react";
+import reactIcon from "../../assets/reactIcon.png";
+import typescriptIcon from "../../assets/typescriptIcon.png";
+import nodeIcon from "../../assets/nodeIcon.png";
+import postgreIcon from "../../assets/postgreIcon.png";
+import arrowIcon from "../../assets/arrowIcon.png";
 import "./banner.scss";
 
 const Banner = (): ReactElement => {
-  const bannerClass = "banner";
-
-  // Adds event listener to prevent dragging.
-  useEffect(() => {
-    const banner = document.querySelector(`.${bannerClass}`);
-    if (!banner) return;
-    banner.addEventListener("dragstart", function (e) {
-      e.preventDefault();
-    });
-  }, []);
-
   return (
-    <div className={bannerClass}>
-      <img src={bannerImage} />
-    </div>
+    <>
+      <div className="banner" />
+      <div className="bannertxt">
+        <h1>Full stack demo project</h1>
+        <div className="technologyIconWrapper">
+          <img className="reactIcon" src={reactIcon} />
+          <img className="tsIcon" src={typescriptIcon} />
+          <img className="nodeIcon" src={nodeIcon} />
+          <img className="postgreIcon" src={postgreIcon} />
+        </div>
+      </div>
+      <div className="arrowIconContainer">
+        <img className="arrowIcon" src={arrowIcon} />
+      </div>
+    </>
   );
 };
 

@@ -1,4 +1,15 @@
+@import "../styles/globals.scss";
+
+// Body
+$body-bg-position-type: absolute;
+$body-bg-position-top: 0;
+$body-bg-position-left: 0;
+
 // Banner
 $banner-position-type: absolute;
-$banner-position-top: 0;
-$banner-position-left: 0;
+$banner-position-top: $global-gutter;
+$banner-position-left: $global-gutter;
+$bannertxt-position-margin: 0 auto;
+$banner-arrow-position-type: absolute;
+$banner-arrow-position-bottom: 20vh;
+$banner-arrow-icon-position-transform: rotate(90deg);

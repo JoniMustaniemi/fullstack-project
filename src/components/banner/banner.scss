@@ -1,25 +1,122 @@
 @import "../../styles/sizes.scss",
+"../../styles/fonts.scss",
+"../../styles/colours.scss",
 "../../styles/positions.scss",
 "../../styles/behaviours.scss",
 "../../styles/layers.scss";
 
 .banner {
-    background-color: black;
-    border-bottom: 1px solid rgba(192, 192, 192, 0.317);
     position: $banner-position-type;
     top: $banner-position-top;
     left: $banner-position-left;
     z-index: $banner-layer-z-index;
-    overflow: hidden;
+    overflow: $banner-behaviour-overflow;
+    filter: $banner-colour-filter;
+    transform: $banner-size-transform;
+    width: $banner-size-width;
+    min-height: $banner-size-min-height;
+    max-height: $banner-size-max-height;
+    height: $banner-size-height;
+    user-select: $banner-behaviour-user-select;
+    background: $banner-colour-background;
+    -webkit-box-shadow: $banner-colour-box-shadow;
+    -moz-box-shadow: $banner-colour-box-shadow;
+    box-shadow: $banner-colour-box-shadow;
+
 }
 
-.banner img {
-    filter: blur(80px);
-    transform: scale(1.3);
-    width: $banner-size-width;
-    min-height: 500px;
-    max-height: 1000px;
+.bannertxt {
+    display: $bannertxt-behaviour-display;
+    justify-content: $bannertxt-behaviour-justify-content;
+    align-items: $bannertxt-behaviour-align-items;
+    text-align: $bannertxt-behaviour-text-align;
     height: $banner-size-height;
-    background-size: $banner-size-type;
-    user-select: $banner-behaviour-user-select;
+    min-height: $banner-size-min-height;
+    max-height: $banner-size-max-height;
+    width: $banner-size-width;
+    margin: $bannertxt-position-margin;
+    user-select: $bannertxt-behaviour-user-select;
+}
+
+.bannertxt>* {
+    color: $bannertxt-colour;
+    font-family: $bannertxt-font;
+    text-shadow: $bannertxt-font-text-shadow;
+}
+
+.bannertxt h1 {
+    font-size: $bannertxt-font-size-h1;
+}
+
+.bannertxt p {
+    font-size: $bannertxt-font-size-p;
+}
+
+.technologyIconWrapper {
+    border: $banner-techwrapper-colour-border;
+    background: $banner-techwrapper-colour-bg;
+    box-shadow: $banner-techwrapper-colour-box-shadow;
+    border-radius: $banner-techwrapper-size-border-radius;
+    padding: $banner-techwrapper-size-padding;
+    display: $banner-techwrapper-behaviour-display;
+    justify-self: $banner-techwrapper-behaviour-justify-self;
+    justify-content: $banner-techwrapper-behaviour-justify-content;
+    width: $banner-techwrapper-size-width;
+    min-width: $banner-techwrapper-size-min-width;
+}
+
+.technologyIconWrapper img {
+    width: $banner-techwrapper-icon-size-width;
+}
+
+.arrowIconContainer {
+    position: $banner-arrow-position-type;
+    bottom: $banner-arrow-position-bottom;
+    width: $banner-arrow-size-width;
+    display: $banner-arrow-behaviour-display;
+    justify-content: $banner-arrow-behaviour-justify-content;
+    text-align: $banner-arrow-behaviour-text-align;
+    cursor: $banner-arrow-behaviour-cursor;
+    animation: bounceAnimation $banner-arrow-behaviour-animation;
+}
+
+.arrowIcon {
+    width: $banner-arrow-icon-size-width;
+    filter: $banner-arrow-icon-colour-filter;
+    transform: $banner-arrow-icon-position-transform;
+    padding: $banner-arrow-icon-size-padding;
+    border-radius: $banner-arrow-icon-size-border-radius;
+    transition: box-shadow $banner-arrow-icon-behaviour-transition;
+}
+
+.reactIcon {
+    filter: $banner-techicon-colour-brightness;
+}
+
+.arrowIconContainer:hover {
+    .arrowIcon {
+        box-shadow: $banner-arrow-icon-colour-box-shadow;
+    }
+
+}
+
+@keyframes bounceAnimation {
+    0% {
+        transform: $banner-arrow-behaviour-animation-1;
+
+    }
+
+    50% {
+        transform: $banner-arrow-behaviour-animation-2;
+    }
+
+    100% {
+        transform: $banner-arrow-behaviour-animation-3;
+    }
+}
+
+@media (max-width: 600px) {
+    .arrowIcon {
+        filter: $banner-arrow-icon-colour-filter-mobile;
+    }
 }
