@@ -24,3 +24,19 @@ $infocard-position-left: 50%;
 $infocard-img-position-float: left;
 $infocard-img-position-margin-bottom: 20px;
 $infocard-active-position-transform: translateY(-10%);
+
+// CardDetails
+$carddetails-position-type: absolute;
+$carddetails-position-top: 50%;
+$carddetails-position-left: 50%;
+$carddetails-position-transform: translate(-50%, 80%);
+$carddetails-h1-position-type: absolute;
+$carddetails-h1-position-left: 50%;
+$carddetails-h1-position-transform: translateX(-50%);
+$carddetails-description-position-type: absolute;
+$carddetails-description-position-top: 25%;
+$carddetails-description-p-position-margin: 0 auto;
+$carddetails-closecaption-position-type: absolute;
+$carddetails-closecaption-position-bottom: 1%;
+$carddetails-closecaption-position-left: 90%;
+$carddetails-closecaption-position-transform: translateX(-50%);

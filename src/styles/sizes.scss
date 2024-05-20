@@ -26,6 +26,17 @@ $banner-arrow-icon-size-border-radius: 50px;
 // InfoCard
 $infocard-size-width: 80vw;
 $infocard-size-min-width: 250px;
+$infocard-size-max-width: 250px;
 $infocard-size-height: 350px;
 $infocard-size-border-radius: 10px;
 $infocard-img-size-border-radius: 10px;
+
+// CardDetails 
+$carddetails-size-width: 80vw;
+$carddetails-size-height: 80vh;
+$carddetails-img-size-width: 100%;
+$carddetails-img-size-height: 100%;
+$carddetails-img-size-object-fit: cover;
+$carddetails-description-size-width: 100%;
+$carddetails-description-p-size-max-width: 50%;
+$carddetails-description-p-size-padding: 2% 0;

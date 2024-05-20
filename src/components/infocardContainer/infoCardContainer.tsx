@@ -1,5 +1,10 @@
-import { useEffect, useState } from "react";
-import forest from "../../assets/enchantedgrove.jpg";
+import { useEffect, useState, useRef } from "react";
+import CardDetails from "../cardDetails/CardDetails";
+import enchantedforest from "../../assets/enchantedgrove.jpg";
+import elarionpeaks from "../../assets/elarionpeaks.jpg";
+import serendoralake from "../../assets/serendoralake.jpg";
+import elysianplains from "../../assets/elysianplains.jpg";
+import aureliacity from "../../assets/aureliacity.jpg";
 
 import "./infoCardContainer.scss";
 
@@ -8,34 +13,24 @@ const InfoCardContainer = ({ locationsInfo }) => {
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [cardsVisible, setCardsVisible] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState(false);
-  const [hovering, setHovering] = useState(false);
-  const infoCardClass = "infoCard";
-  let timeoutId: NodeJS.Timeout;
+  const [hoveringCardId, setHoveringCardId] = useState(null);
+  const [activeLocation, setActiveLocation] = useState([]);
+  const [loadedImages, setLoadedImages] = useState([]);
+  const [detailsActive, setDetailsActive] = useState(false);
+  let timeoutId = useRef(null);
 
   useEffect(() => {
     window.addEventListener("scroll", changeScrollValue);
-  });
+    return () => window.removeEventListener("scroll", changeScrollValue);
+  }, [prevScrollY]);
 
-  const changeScrollValue = () => {
-    const currentScrollY = window.scrollY;
-    setIsScrollIncreasing(currentScrollY > prevScrollY);
-    setPrevScrollY(currentScrollY);
-  };
-
-  /**
-   * Hook to show and hide card elements when scrolling.
-   * Uses resettable timer to determine card visibility state.
-   * Timer resets when scrolling event is detected.
-   */
   useEffect(() => {
     let timeoutId;
 
-    // Clear existing timeout if it exists
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
 
-    // Set new timeout and save its ID
     timeoutId = setTimeout(() => {
       setScrollTimeout(false);
     }, 500);
@@ -45,10 +40,6 @@ const InfoCardContainer = ({ locationsInfo }) => {
     if (isScrollIncreasing) {
       setCardsVisible(true);
     } else {
-      /*
-       * If there is an existing timer, clear it and set a new timeout of 500 milliseconds.
-       * When the timeout expires, set timer to false and remove the cards.
-       */
       if (timeoutId) {
         clearTimeout(timeoutId);
       }
@@ -58,52 +49,133 @@ const InfoCardContainer = ({ locationsInfo }) => {
       }, 500);
     }
 
-    // Cleanup function to clear timeout on component unmount or next call of the hook
     return () => clearTimeout(timeoutId);
   }, [isScrollIncreasing]);
 
-  const handleClick = () => {
-    alert("Card clicked!");
+  useEffect(() => {
+    const images = [
+      enchantedforest,
+      elarionpeaks,
+      serendoralake,
+      elysianplains,
+      aureliacity,
+    ];
+    const loadedImagesPromises = images.map((image) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = image;
+        img.onload = () =>
+          resolve({ title: getTitleFromPath(image), image: img });
+        img.onerror = (error) => reject(error);
+      });
+    });
+
+    Promise.all(loadedImagesPromises)
+      .then((images) => {
+        setLoadedImages(images);
+      })
+      .catch((error) => {
+        console.error("Error loading images:", error);
+      });
+  }, []);
+
+  const getTitleFromPath = (path) => {
+    const parts = path.split("/");
+    return parts[parts.length - 1].split(".")[0];
   };
 
-  function stopRaise() {
-    clearTimeout(timeoutId); // Clear existing timeout
-    timeoutId = setTimeout(() => {
-      setHovering(false);
+  const getImageByTitle = (title) => {
+    const formattedTitle = title.toLowerCase().replace(/\s+/g, "");
+    return loadedImages.find((imgObj) => imgObj.title === formattedTitle)
+      ?.image;
+  };
+
+  const handleClick = (event) => {
+    const formattedId = event.currentTarget.id
+      .toLowerCase()
+      .replace(/\s+/g, "");
+
+    for (const location of locationsInfo) {
+      const formattedTitle = location.title.toLowerCase().replace(/\s+/g, "");
+
+      if (formattedTitle === formattedId) {
+        setDetailsActive(true);
+        setActiveLocation(location);
+        return;
+      }
+    }
+
+    console.log("Location not found in locationsInfo array.");
+  };
+
+  function stopRaise(event) {
+    const currentTargetId = event.currentTarget.id;
+    clearTimeout(timeoutId.current);
+    timeoutId.current = setTimeout(() => {
+      if (hoveringCardId === currentTargetId) {
+        setHoveringCardId(null);
+      }
     }, 200);
   }
 
-  function startRaise() {
-    clearTimeout(timeoutId);
-    setHovering(true);
+  function startRaise(event) {
+    const currentTargetId = event.currentTarget.id;
+    clearTimeout(timeoutId.current);
+    setHoveringCardId(currentTargetId);
   }
+
+  const changeScrollValue = () => {
+    const currentScrollY = window.scrollY;
+    setIsScrollIncreasing(currentScrollY > prevScrollY);
+    setPrevScrollY(currentScrollY);
+  };
+
+  const closeDetails = () => {
+    setDetailsActive(false);
+  };
 
   return (
     <>
       {cardsVisible && locationsInfo && (
         <div className="infoCardContainer">
-          {/* Map through locationsInfo and render cards */}
           {locationsInfo.map((location, index) => (
             <div
               key={index}
-              className={`${infoCardClass} ${hovering ? "activeCard" : ""}`}
+              className={`infoCard ${
+                hoveringCardId ===
+                location.title.toLowerCase().replace(/\s+/g, "")
+                  ? "activeCard"
+                  : ""
+              }`}
+              id={location.title.toLowerCase().replace(/\s+/g, "")}
               onClick={handleClick}
               onMouseEnter={startRaise}
               onMouseLeave={stopRaise}
             >
-              <img
-                src={forest}
-                alt={location.title}
-                style={{
-                  width: "100%", // Adjust as needed
-                  height: "100%", // Adjust as needed
-                  objectFit: "cover", // Adjust as needed
-                }}
-              />
+              {getImageByTitle(location.title) && (
+                <img
+                  src={getImageByTitle(location.title).src}
+                  alt={location.title}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              )}
               <h1>{location.title}</h1>
             </div>
           ))}
         </div>
+      )}
+      {detailsActive && (
+        <CardDetails
+          currentLocation={activeLocation}
+          cardId={activeLocation["title"].toLowerCase().replace(/\s+/g, "")}
+          onClose={() => {
+            closeDetails();
+          }}
+        />
       )}
     </>
   );

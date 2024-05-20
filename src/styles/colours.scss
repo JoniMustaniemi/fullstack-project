@@ -13,16 +13,21 @@ $banner-colour-filter: blur(80px);
 $banner-colour-background: linear-gradient(to bottom, #478196, #06141b);
 $banner-colour-box-shadow: inset 0px 0px 62px 44px #000000bf;
 $bannertxt-colour: whitesmoke;
-$banner-techwrapper-colour-border:  2px double silver;
+$banner-techwrapper-colour-border: 2px double silver;
 $banner-techwrapper-colour-bg: linear-gradient(to top, silver, #ffffff72);
-$banner-techwrapper-colour-box-shadow:  inset 0px 0px 10px 5px #000000cc;
+$banner-techwrapper-colour-box-shadow: inset 0px 0px 10px 5px #000000cc;
 $banner-arrow-icon-colour-filter: invert(100%);
 $banner-arrow-icon-colour-filter-mobile: invert(0%);
 $banner-techicon-colour-brightness: brightness(0.5);
 $banner-arrow-icon-colour-box-shadow: 0 0 10px #00000080;
 
-//InfoCard
-$infocard-colour-txt: white;
+// InfoCard
+$infocard-colour-txt: $global-white;
 $infocard-colour-border: 3px groove rgb(173, 128, 13);
 $infocard-colour-box-shadow: 0 16px 32px #000;
 $infocard-active-colour-filter: brightness(1.2);
+
+// CardDetails
+$carddetails-colour-txt: $global-white;
+$carddetails-description-colour-bg: #00000034;
+$carddetails-closecaption-colour-txt: #e6e1e1;

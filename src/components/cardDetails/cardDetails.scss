@@ -1,0 +1,60 @@
+@import "../../styles/sizes.scss",
+"../../styles/fonts.scss",
+"../../styles/colours.scss",
+"../../styles/positions.scss",
+"../../styles/behaviours.scss",
+"../../styles/layers.scss";
+
+.cardInfo {
+    width: $carddetails-size-width;
+    height: $carddetails-size-height;
+    color: $carddetails-colour-txt;
+    position: $carddetails-position-type;
+    top: $carddetails-position-top;
+    left: $carddetails-position-left;
+    transform: $carddetails-position-transform;
+    border: $infocard-colour-border;
+    border-radius: $infocard-size-border-radius;
+    overflow: $carddetails-behaviour-overflow;
+}
+
+.cardInfo h1 {
+    font-size: $carddetails-h1-font-size;
+    text-shadow: $bannertxt-font-text-shadow;
+    position: $carddetails-h1-position-type;
+    left: $carddetails-h1-position-left;
+    transform: $carddetails-h1-position-transform;
+}
+
+.cardInfo img {
+    width: $carddetails-img-size-width;
+    height: $carddetails-img-size-height;
+    object-fit: $carddetails-img-size-object-fit;
+}
+
+.locationDescription {
+    position: $carddetails-description-position-type;
+    top: $carddetails-description-position-top;
+    width: $carddetails-description-size-width;
+    background-color: $carddetails-description-colour-bg;
+}
+
+.locationDescription p {
+    text-align: $carddetails-description-p-behaviour-text-align;
+    font-size: $carddetails-description-p-font-size;
+    text-shadow: $bannertxt-font-text-shadow;
+    max-width: $carddetails-description-p-size-max-width;
+    margin: $carddetails-description-p-position-margin;
+    padding: $carddetails-description-p-size-padding;
+}
+
+.closeCaption {
+    position: $carddetails-closecaption-position-type;
+    bottom: $carddetails-closecaption-position-bottom;
+    left: $carddetails-closecaption-position-left;
+    transform: $carddetails-closecaption-position-transform;
+    color: $carddetails-closecaption-colour-txt;
+    text-shadow: $bannertxt-font-text-shadow;
+    font-size: $carddetails-closecaption-font-size;
+    font-style: $carddetails-closecaption-font-style;
+}

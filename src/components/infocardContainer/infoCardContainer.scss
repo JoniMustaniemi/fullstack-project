@@ -25,6 +25,7 @@
     border-radius: $infocard-size-border-radius;
     height: $infocard-size-height;
     min-width: $infocard-size-min-width;
+    max-width: $infocard-size-max-width;
     box-shadow: $infocard-colour-box-shadow;
     transition: $infocard-behaviour-transition;
 }

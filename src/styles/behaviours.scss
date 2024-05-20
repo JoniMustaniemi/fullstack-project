@@ -35,6 +35,10 @@ $banner-arrow-behaviour-animation-3: translateY(0);
 $infocard-behaviour-transition: 0.5s ease-in-out;
 $infocard-behaviour-transfrom: translate(-50%, -50%);
 $infocard-behaviour-display: grid;
-$infocard-behaviour-grid-type: repeat(auto-fill, minmax(250px, 1fr));
+$infocard-behaviour-grid-type: repeat(auto-fit, minmax(250px, 1fr));
 $infocard-behaviour-grid-gap: 50px;
 $infocard-behaviour-text-align: $global-center;
+
+// CardDetails
+$carddetails-behaviour-overflow: hidden;
+$carddetails-description-p-behaviour-text-align: center;
