@@ -31,6 +31,18 @@ CREATE TABLE locations (
     CONSTRAINT location_pkey PRIMARY KEY (id)
 );
 ```
+### Database configuration
+Before running the application, you need to update the database-specific information. This is done in the dbConfig.js file located in the Database folder.
+Create and open the dbConfig.js file and update it with your database information:
+```bash
+module.exports = {
+  user: "username",
+  host: "host",
+  database: "databasename",
+  password: "password",
+  port: 1234,
+};
+```
 ## Installation
 
 Step-by-step instructions on how to get the development environment set up.
