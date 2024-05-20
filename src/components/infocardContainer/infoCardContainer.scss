@@ -1,0 +1,47 @@
+@import "../../styles/sizes.scss",
+"../../styles/fonts.scss",
+"../../styles/colours.scss",
+"../../styles/positions.scss",
+"../../styles/behaviours.scss",
+"../../styles/layers.scss";
+
+.infoCardContainer {
+    transition: $infocard-behaviour-transition;
+    position: $infocard-position-type;
+    top: $infocard-position-top;
+    left: $infocard-position-left;
+    transform: $infocard-behaviour-transfrom;
+    max-width: $infocard-size-width;
+    display: $infocard-behaviour-display;
+    grid-template-columns: $infocard-behaviour-grid-type;
+    gap: $infocard-behaviour-grid-gap;
+}
+
+.infoCard {
+    color: $infocard-colour-txt;
+    text-align: $infocard-behaviour-text-align;
+    font-size: $infocard-font-size;
+    border: $infocard-colour-border;
+    border-radius: $infocard-size-border-radius;
+    height: $infocard-size-height;
+    min-width: $infocard-size-min-width;
+    box-shadow: $infocard-colour-box-shadow;
+    transition: $infocard-behaviour-transition;
+}
+
+.infoCard img {
+    float: $infocard-img-position-float;
+    border-radius: $infocard-img-size-border-radius;
+    margin-bottom: $infocard-img-position-margin-bottom;
+}
+
+.activeCard {
+    transform: $infocard-active-position-transform;
+    filter: $infocard-active-colour-filter;
+}
+
+.infoCard h1 {
+    font-size: $infocard-h1-font-size;
+    text-shadow: $bannertxt-font-text-shadow;
+    font-style: $infocard-h1-font-style;
+}

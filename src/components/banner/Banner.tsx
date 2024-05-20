@@ -1,9 +1,10 @@
 import { ReactElement } from "react";
+import NavigationArrow from "../navigationArrow/NavigationArrow";
 import reactIcon from "../../assets/reactIcon.png";
 import typescriptIcon from "../../assets/typescriptIcon.png";
 import nodeIcon from "../../assets/nodeIcon.png";
 import postgreIcon from "../../assets/postgreIcon.png";
-import arrowIcon from "../../assets/arrowIcon.png";
+
 import "./banner.scss";
 
 const Banner = (): ReactElement => {
@@ -19,9 +20,7 @@ const Banner = (): ReactElement => {
           <img className="postgreIcon" src={postgreIcon} />
         </div>
       </div>
-      <div className="arrowIconContainer">
-        <img className="arrowIcon" src={arrowIcon} />
-      </div>
+      <NavigationArrow />
     </>
   );
 };

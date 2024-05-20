@@ -69,54 +69,6 @@
     width: $banner-techwrapper-icon-size-width;
 }
 
-.arrowIconContainer {
-    position: $banner-arrow-position-type;
-    bottom: $banner-arrow-position-bottom;
-    width: $banner-arrow-size-width;
-    display: $banner-arrow-behaviour-display;
-    justify-content: $banner-arrow-behaviour-justify-content;
-    text-align: $banner-arrow-behaviour-text-align;
-    cursor: $banner-arrow-behaviour-cursor;
-    animation: bounceAnimation $banner-arrow-behaviour-animation;
-}
-
-.arrowIcon {
-    width: $banner-arrow-icon-size-width;
-    filter: $banner-arrow-icon-colour-filter;
-    transform: $banner-arrow-icon-position-transform;
-    padding: $banner-arrow-icon-size-padding;
-    border-radius: $banner-arrow-icon-size-border-radius;
-    transition: box-shadow $banner-arrow-icon-behaviour-transition;
-}
-
 .reactIcon {
     filter: $banner-techicon-colour-brightness;
-}
-
-.arrowIconContainer:hover {
-    .arrowIcon {
-        box-shadow: $banner-arrow-icon-colour-box-shadow;
-    }
-
-}
-
-@keyframes bounceAnimation {
-    0% {
-        transform: $banner-arrow-behaviour-animation-1;
-
-    }
-
-    50% {
-        transform: $banner-arrow-behaviour-animation-2;
-    }
-
-    100% {
-        transform: $banner-arrow-behaviour-animation-3;
-    }
-}
-
-@media (max-width: 600px) {
-    .arrowIcon {
-        filter: $banner-arrow-icon-colour-filter-mobile;
-    }
 }

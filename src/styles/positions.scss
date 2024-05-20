@@ -13,3 +13,14 @@ $bannertxt-position-margin: 0 auto;
 $banner-arrow-position-type: absolute;
 $banner-arrow-position-bottom: 20vh;
 $banner-arrow-icon-position-transform: rotate(90deg);
+
+// Banner - awrrow icon
+$banner-arrow-icon-position-bottom: -10vh;
+
+// InfoCard
+$infocard-position-type: absolute;
+$infocard-position-top: 155%;
+$infocard-position-left: 50%;
+$infocard-img-position-float: left;
+$infocard-img-position-margin-bottom: 20px;
+$infocard-active-position-transform: translateY(-10%);

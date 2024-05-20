@@ -1,0 +1,79 @@
+@import "../../styles/sizes.scss",
+"../../styles/fonts.scss",
+"../../styles/colours.scss",
+"../../styles/positions.scss",
+"../../styles/behaviours.scss",
+"../../styles/layers.scss";
+
+.arrowIcon {
+    width: $banner-arrow-icon-size-width;
+    filter: $banner-arrow-icon-colour-filter;
+    transform: $banner-arrow-icon-position-transform;
+    padding: $banner-arrow-icon-size-padding;
+    border-radius: $banner-arrow-icon-size-border-radius;
+    transition: box-shadow $banner-arrow-icon-behaviour-transition;
+}
+
+
+.arrowIconContainer {
+    position: $banner-arrow-position-type;
+    bottom: $banner-arrow-position-bottom;
+    width: $banner-arrow-size-width;
+    display: $banner-arrow-behaviour-display;
+    justify-content: $banner-arrow-behaviour-justify-content;
+    text-align: $banner-arrow-behaviour-text-align;
+    cursor: $banner-arrow-behaviour-cursor;
+    animation: bounceAnimation $banner-arrow-behaviour-animation;
+    transition: box-shadow $banner-arrow-icon-behaviour-transition;
+}
+
+
+.arrowIconContainer:hover {
+    .arrowIcon {
+        box-shadow: $banner-arrow-icon-colour-box-shadow;
+    }
+
+}
+
+.arrowTopPosition {
+    transition: $banner-arrow-icon-behaviour-transition;
+    bottom: $banner-arrow-position-bottom;
+}
+
+.arrowBottomPosition {
+    transition: $banner-arrow-icon-behaviour-transition;
+    bottom: $banner-arrow-icon-position-bottom;
+
+}
+
+.arrowBottomPosition .arrowIcon {
+    transition: $banner-arrow-icon-behaviour-transition;
+    transform: $banner-arrow-icon-behaviour-transform-rotate-bottom;
+}
+
+.arrowTopPosition .arrowIcon {
+    transition: $banner-arrow-icon-behaviour-transition;
+    transform: $banner-arrow-icon-behaviour-transform-rotate-top;
+
+}
+
+@keyframes bounceAnimation {
+    0% {
+        transform: $banner-arrow-behaviour-animation-1;
+
+    }
+
+    50% {
+        transform: $banner-arrow-behaviour-animation-2;
+    }
+
+    100% {
+        transform: $banner-arrow-behaviour-animation-3;
+    }
+}
+
+@media (max-width: 600px) {
+    .arrowIcon {
+        filter: $banner-arrow-icon-colour-filter-mobile;
+    }
+}

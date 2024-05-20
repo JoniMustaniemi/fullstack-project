@@ -19,6 +19,13 @@ $banner-techwrapper-size-width: calc(100vw / 3);
 $banner-techwrapper-size-min-width: 300px;
 $banner-techwrapper-icon-size-width: 60px;
 $banner-arrow-size-width: 100%;
-$banner-arrow-icon-size-width: 80px;
+$banner-arrow-icon-size-width: 40px;
 $banner-arrow-icon-size-padding: 10px;
 $banner-arrow-icon-size-border-radius: 50px;
+
+// InfoCard
+$infocard-size-width: 80vw;
+$infocard-size-min-width: 250px;
+$infocard-size-height: 350px;
+$infocard-size-border-radius: 10px;
+$infocard-img-size-border-radius: 10px;

@@ -22,7 +22,19 @@ $banner-arrow-behaviour-cursor: pointer;
 $banner-arrow-behaviour-animation: 2s infinite;
 $banner-arrow-icon-behaviour-transition: 0.5s ease;
 
+// Banner - arrow
+$banner-arrow-icon-behaviour-transform-rotate-bottom: rotate(-90deg);
+$banner-arrow-icon-behaviour-transform-rotate-top: rotate(90deg);
+
 // Banner - arrow animation
 $banner-arrow-behaviour-animation-1: translateY(0);
 $banner-arrow-behaviour-animation-2: translateY(-15px);
 $banner-arrow-behaviour-animation-3: translateY(0);
+
+// InfoCard
+$infocard-behaviour-transition: 0.5s ease-in-out;
+$infocard-behaviour-transfrom: translate(-50%, -50%);
+$infocard-behaviour-display: grid;
+$infocard-behaviour-grid-type: repeat(auto-fill, minmax(250px, 1fr));
+$infocard-behaviour-grid-gap: 50px;
+$infocard-behaviour-text-align: $global-center;
