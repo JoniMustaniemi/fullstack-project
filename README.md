@@ -3,9 +3,17 @@ A fullstack project with React, Typescript, Node and PostgreSQL.
 
 ## Table of Contents
 
+- [Preview](#preview)
 - [Prerequisites](#prerequisite)
 - [Installation](#installation)
 - [Usage](#usage)
+
+## Preview
+Preview of the project.
+
+<img src="src/assets/preview_01.png" alt="Example Image" width="100%">
+<img src="src/assets/preview_02.png" alt="Example Image" width="100%">
+<img src="src/assets/preview_03.png" alt="Example Image" width="100%">
 
 ## Prerequisites
 This project expects you to have a postgres database set up as follows:
