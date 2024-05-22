@@ -1,4 +1,4 @@
-# fullstack-project
+# Fullstack-project
 A fullstack project with React, Typescript, Node and PostgreSQL.
 
 ## Table of Contents
