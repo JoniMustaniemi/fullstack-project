@@ -4,7 +4,6 @@ import reactIcon from "../../assets/reactIcon.png";
 import typescriptIcon from "../../assets/typescriptIcon.png";
 import nodeIcon from "../../assets/nodeIcon.png";
 import postgreIcon from "../../assets/postgreIcon.png";
-
 import "./banner.scss";
 
 const Banner = (): ReactElement => {

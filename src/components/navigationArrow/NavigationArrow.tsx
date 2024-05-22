@@ -3,8 +3,8 @@ import arrowIcon from "../../assets/arrowIcon.png";
 import "./navigationarrow.scss";
 
 const NavigationArrow = (): ReactElement => {
-  const [topPosition, setTopPosition] = useState(true);
-  const [bottomPosition, setBottomPosition] = useState(false);
+  const [topPosition, setTopPosition] = useState<boolean>(true);
+  const [bottomPosition, setBottomPosition] = useState<boolean>(false);
 
   useEffect(() => {
     window.addEventListener("wheel", handleScroll);

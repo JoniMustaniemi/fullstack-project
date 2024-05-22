@@ -28,7 +28,7 @@ export function addDragPreventionToImages(
   };
 }
 
-export function getLocationData(): Promise<any> {
+export function getLocationData(): Promise<unknown> {
   return fetch("http://localhost:3000/") // Replace with your backend URL
     .then((response) => {
       if (!response.ok) {

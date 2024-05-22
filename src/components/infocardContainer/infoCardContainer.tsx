@@ -9,15 +9,14 @@ import aureliacity from "../../assets/aureliacity.jpg";
 import "./infoCardContainer.scss";
 
 const InfoCardContainer = ({ locationsInfo }) => {
-  const [isScrollIncreasing, setIsScrollIncreasing] = useState(false);
-  const [prevScrollY, setPrevScrollY] = useState(0);
-  const [cardsVisible, setCardsVisible] = useState(false);
-  const [scrollTimeout, setScrollTimeout] = useState(false);
-  const [hoveringCardId, setHoveringCardId] = useState(null);
-  const [activeLocation, setActiveLocation] = useState([]);
-  const [loadedImages, setLoadedImages] = useState([]);
-  const [detailsActive, setDetailsActive] = useState(false);
-  let timeoutId = useRef(null);
+  const [isScrollIncreasing, setIsScrollIncreasing] = useState<boolean>(false);
+  const [prevScrollY, setPrevScrollY] = useState<number>(0);
+  const [cardsVisible, setCardsVisible] = useState<boolean>(false);
+  const [hoveringCardId, setHoveringCardId] = useState<string | null>(null);
+  const [activeLocation, setActiveLocation] = useState<any[]>([]);
+  const [loadedImages, setLoadedImages] = useState<any[]>([]);
+  const [detailsActive, setDetailsActive] = useState<boolean>(false);
+  let timeoutId = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     window.addEventListener("scroll", changeScrollValue);
@@ -25,17 +24,9 @@ const InfoCardContainer = ({ locationsInfo }) => {
   }, [prevScrollY]);
 
   useEffect(() => {
-    let timeoutId;
-
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
-
-    timeoutId = setTimeout(() => {
-      setScrollTimeout(false);
-    }, 500);
-
-    setScrollTimeout(true);
 
     if (isScrollIncreasing) {
       setCardsVisible(true);
@@ -44,7 +35,6 @@ const InfoCardContainer = ({ locationsInfo }) => {
         clearTimeout(timeoutId);
       }
       timeoutId = setTimeout(() => {
-        setScrollTimeout(false);
         setCardsVisible(false);
       }, 500);
     }
@@ -79,18 +69,18 @@ const InfoCardContainer = ({ locationsInfo }) => {
       });
   }, []);
 
-  const getTitleFromPath = (path) => {
+  const getTitleFromPath = (path: string) => {
     const parts = path.split("/");
     return parts[parts.length - 1].split(".")[0];
   };
 
-  const getImageByTitle = (title) => {
+  const getImageByTitle = (title: string): string => {
     const formattedTitle = title.toLowerCase().replace(/\s+/g, "");
     return loadedImages.find((imgObj) => imgObj.title === formattedTitle)
       ?.image;
   };
 
-  const handleClick = (event) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const formattedId = event.currentTarget.id
       .toLowerCase()
       .replace(/\s+/g, "");
@@ -108,7 +98,7 @@ const InfoCardContainer = ({ locationsInfo }) => {
     console.log("Location not found in locationsInfo array.");
   };
 
-  function stopRaise(event) {
+  const stopRaise = (event: React.MouseEvent<HTMLElement>) => {
     const currentTargetId = event.currentTarget.id;
     clearTimeout(timeoutId.current);
     timeoutId.current = setTimeout(() => {
@@ -116,21 +106,23 @@ const InfoCardContainer = ({ locationsInfo }) => {
         setHoveringCardId(null);
       }
     }, 200);
-  }
+  };
 
-  function startRaise(event) {
-    const currentTargetId = event.currentTarget.id;
-    clearTimeout(timeoutId.current);
+  const startRaise = (event: React.MouseEvent<HTMLElement>): void => {
+    const currentTargetId: string = event.currentTarget.id;
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current);
+    }
     setHoveringCardId(currentTargetId);
-  }
+  };
 
-  const changeScrollValue = () => {
+  const changeScrollValue: () => void = () => {
     const currentScrollY = window.scrollY;
     setIsScrollIncreasing(currentScrollY > prevScrollY);
     setPrevScrollY(currentScrollY);
   };
 
-  const closeDetails = () => {
+  const closeDetails: () => void = () => {
     setDetailsActive(false);
   };
 

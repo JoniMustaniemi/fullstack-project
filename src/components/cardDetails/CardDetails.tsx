@@ -2,13 +2,10 @@ import React, { ReactElement, useState, useEffect } from "react";
 import "./cardDetails.scss";
 
 const CardDetails = ({ currentLocation, cardId, onClose }): ReactElement => {
-  const [activeElement, setActiveElement] = useState(null);
   const [cardImage, setCardImage] = useState(null);
 
   useEffect(() => {
     if (!cardId) return;
-    setActiveElement(currentLocation);
-
     const importImage = async () => {
       try {
         const imageModule = await import(`../../assets/${cardId}.jpg`);
